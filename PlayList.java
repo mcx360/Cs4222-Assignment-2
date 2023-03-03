@@ -14,10 +14,12 @@ public class PlayList{
     private String playListName;
     private ArrayList<Track> songs;
 
+    //default name playlist
     public PlayList(){
         this.playListName = "My playlist";
     }
 
+    //specified name playlist
     public PlayList(String playListName){
         this.playListName = playListName;
     }

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 //Michal Kornacki
 //ID:22361979
@@ -12,7 +13,7 @@ public class PlayList{
 
     //playList instance variables
     private String playListName;
-    private ArrayList<Track> songs;
+    private LinkedList<Track>songCollection;
 
     //default name playlist
     public PlayList(){

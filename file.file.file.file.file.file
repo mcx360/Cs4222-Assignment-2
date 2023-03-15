@@ -1,0 +1,99 @@
+//Oscar Zhou, 22338705
+import java.util.*;
+
+	public class PlayList{
+		private String playListName;
+		private LinkedList<Track> tracks;
+		
+	public PlayList(String playListName) {
+		this.playListName = playListName;
+		this.tracks = new LinkedList<Track>();
+	}
+	
+	public String toString() {
+		String playlistToString = "";
+		for(int i=0; i<tracks.size(); i++) {
+			playlistToString += tracks.get(i).toString() + '\n';
+		}
+		return playlistToString;
+	}
+	
+	public void setName(String name) {
+		this.playListName = name;
+	}
+	public String getName() {
+		return this.playListName;
+	}
+	
+	public void add(String title, String artist) {
+		Track addTrack = new Track(title, artist);
+		tracks.add(addTrack);
+	}
+	public void add(String title, String artist, int year, int duration) {
+		Track addTrack = new Track(title, artist, year, duration);
+        tracks.add(addTrack);    
+ 	}
+	public void add(Track t) {
+		tracks.add(t);
+	}
+	
+	public boolean remove(String title) {
+	    boolean result = false;
+	    Track tempTrack = new Track(title.toLowerCase(), "");
+	    Iterator<Track> iterator = tracks.iterator();
+	    while (iterator.hasNext()) {
+	        Track eachTrack = iterator.next();
+	        if (eachTrack.getTitle().toLowerCase().equals(tempTrack.getTitle())) {
+	            iterator.remove();
+	            result = true;
+	        }
+	    }
+	    return result;
+	}
+	
+	public void showList() {
+		if (tracks.size()!=0) {
+		System.out.println(toString());
+	} else {
+		System.out.println("This list is empty");
+		}
+	}
+	
+	public void playAll(boolean random) {
+		String randomList = "";
+		if (random == false) {
+			showList();
+		} else {
+			while (randomList.split("\n").length < tracks.size()) {
+				int randomTrack = (int) (Math.random()*tracks.size());
+				String trackName = tracks.get(randomTrack).toString();
+				if (randomList.indexOf(trackName) == -1) {
+				randomList += trackName + '\n';
+				}
+			}
+			System.out.println(randomList);
+		}
+	}
+	
+	public void playOnly(String artist) {
+		String artistLowCase = artist.toLowerCase();
+		String onlyArtist = "";
+		for(Track eachTrack : tracks) {
+			if (eachTrack.getArtist().toLowerCase().contains(artistLowCase) == true) {
+				onlyArtist += eachTrack + "\n";
+			}
+		}
+		System.out.println(onlyArtist);
+	}
+	
+	public void playOnly(int year) {
+		String onlyArtist = "";
+		for(Track eachTrack : tracks) {
+			if (eachTrack.getYear() == year) {
+				onlyArtist += eachTrack + "\n";
+			}
+		}
+		System.out.println(onlyArtist);
+	}
+	
+}

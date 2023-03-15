@@ -1,0 +1,131 @@
+//Oscar Zhou ID:22338705
+//group members:
+//Karthik Santhosh Madhav ID:22350527
+//Filip Kapusciak ID:22343091
+//Michal Kornacki ID:22361979
+//Stephen McNeill Killeen ID:22359206
+public class PlayListDriver {
+    public static void main(String[] args) {
+        PlayList codeMusic = new PlayList("Coding Music");
+        codeMusic.add(new Track("daydreams", "again&again",2022,144));
+        codeMusic.add(new Track("ramune","kyuuwaii",2022,128));
+        codeMusic.add(new Track("WITH U","Kyoto Black",2021,253));
+        codeMusic.add(new Track("HALO HALO","Shawn Wasabi",2020,163));
+        codeMusic.add(new Track("LEMONS","Shawn Wasabi",2020,156));
+        codeMusic.add(new Track("MANGO LOVE","Shawn Wasabi",2020,183));
+        codeMusic.add(new Track("ANIMAL CROSSING","Shawn Wasabi",2020,159));
+        codeMusic.add("MARBLE TEA", "Shawn Wasabi");
+        codeMusic.add("Choice", "Jack Stauber's Micropop");
+        
+        PlayList random = new PlayList("Random Songs");
+        random.add(new Track("NIGHT DANCER", "imase",2022,210));
+        random.add(new Track("Honeypie","JAWNY",2020,135));
+        random.add(new Track("Aftermath","Caravan Palace",2015,185));
+        random.add(new Track("High School Never Ends","Bowling For Soup"));
+        random.add(new Track("Neko Nation Anthem","S3RL",2015,184));
+        
+        Track BabyMyPhone = new Track("Baby My Phone","Yameii Online",2021,215);
+        codeMusic.add(BabyMyPhone);
+
+        System.out.println("\n-- INITIAL PLAYLIST --");
+        codeMusic.showList();
+
+        System.out.println("\n-- REMOVE ramune --");
+        boolean removed = codeMusic.remove("ramune");
+        System.out.println("\nABLE TO REMOVE ramune? " + removed);
+        codeMusic.showList();
+
+        removed = codeMusic.remove("ramune");
+        System.out.println("\nABLE TO REMOVE ramune AGAIN? " + removed);
+        codeMusic.showList();
+
+        System.out.println("\n-- CURRENT NAME --");
+        System.out.println(codeMusic.getName());
+
+        codeMusic.setName("Awesome Playlist");
+        System.out.println("\n-- NEW NAME --");
+        System.out.println(codeMusic.getName());
+
+
+        System.out.println("\n-- PLAY IN ORDER --");
+        codeMusic.playAll(false);
+        System.out.println("\n-- PLAY SHUFFLED --");
+        codeMusic.playAll(true);
+        System.out.println("\n-- PLAY SHUFFLED AGAIN --");
+        codeMusic.playAll(true);
+
+
+        System.out.println("\n-- ONLY PLAY SHAWN WASABI --");
+        codeMusic.playOnly("SHAWN");
+        System.out.println("-");
+        codeMusic.playOnly("wasabi");
+        System.out.println("-");
+        codeMusic.playOnly("awn was");
+
+        System.out.println("\n-- ONLY PLAY Justin Bieber --");
+        codeMusic.playOnly("Justin Bieber");
+        System.out.println("-");
+
+        System.out.println("\n-- PLAY ONLY 2021 --");
+        codeMusic.playOnly(2021);
+
+        System.out.println("\n-- TO STRING METHOD --");
+        System.out.println(codeMusic.toString());
+
+
+        System.out.println("\n-- EMPTY PLAYLIST --");
+        PlayList empty = new PlayList("");
+        empty.showList();
+        empty.playAll(true);
+        empty.playOnly(2004);
+        
+        Track pinkGreen = new Track("Pink and Green","Roy Purdy",2017,156);
+        random.add(pinkGreen);
+
+        System.out.println("\n-- INITIAL PLAYLIST --");
+        random.showList();
+
+        System.out.println("\n-- REMOVE Pink and Green --");
+        boolean removed2 = random.remove("Pink AND green");
+        System.out.println("\nABLE TO REMOVE Pink and Green? " + removed2);
+        random.showList();
+
+        removed2 = codeMusic.remove("Pink and Green");
+        System.out.println("\nABLE TO REMOVE Pink and Green AGAIN? " + removed2);
+        random.showList();
+
+        System.out.println("\n-- CURRENT NAME --");
+        System.out.println(random.getName());
+
+        random.setName("Random Playlist");
+        System.out.println("\n-- NEW NAME --");
+        System.out.println(random.getName());
+
+
+        System.out.println("\n-- PLAY IN ORDER --");
+        random.playAll(false);
+        System.out.println("\n-- PLAY SHUFFLED --");
+        random.playAll(true);
+        System.out.println("\n-- PLAY SHUFFLED AGAIN --");
+        random.playAll(true);
+
+
+        System.out.println("\n-- ONLY PLAY S3RL --");
+        random.playOnly("S3");
+        System.out.println("-");
+        random.playOnly("3R");
+        System.out.println("-");
+        random.playOnly("RL");
+
+        System.out.println("\n-- Roy Purdy --");
+        random.playOnly("ROY");
+        System.out.println("-");
+
+        System.out.println("\n-- PLAY ONLY 2021 --");
+        random.playOnly(2021);
+
+        System.out.println("\n-- TO STRING METHOD --");
+        System.out.println(random.toString());
+
+    }
+}

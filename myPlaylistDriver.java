@@ -1,3 +1,5 @@
+//Michal Kornacki
+//ID:22361979
 public class myPlaylistDriver {
     public static void main(String[] args){
 
@@ -17,6 +19,7 @@ public class myPlaylistDriver {
         favourites.add(songTwo);
         favourites.add(songThree);
         favourites.add(songFour);
+        favourites.add(songFive);
         
 
         //inspect and alter the playlist name to ensure get and set methods are functional
@@ -55,36 +58,6 @@ public class myPlaylistDriver {
         favourites.playOnly(2019);
         System.out.println();
 
-
-
-
-
-
-
-
-
-
-
-        
-
-        
-        
-        //playListOne.setName("favourites");
-        //System.out.println(playListOne.getName());
-        //playListOne.add(songOne);
-        //playListOne.add(songTwo);
-        //playListOne.add(songThree);
-        //playListOne.add(songFour);
-        //playListOne.add(new Track("I really wanna stay at your house","Rosa Walton"));
-        //System.out.println(playListOne.toString());
-
-        
-        //System.out.println(playListOne.remove("After Dark"));
-
-        //System.out.println("playList modified");
-        //System.out.println(playListOne.toString());
-
-        
 
     }
 }

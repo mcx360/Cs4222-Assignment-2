@@ -61,19 +61,18 @@ public class PlayList{
 
     //returns true if a Track instance with the same title is removed from the playlist, else returns false
     public boolean remove (String title){
-        Iterator<Track> checkForRemoval = songCollection.iterator();
+        Iterator <Track> checkForRemoval = songCollection.iterator();
         boolean removed = false;
-        
         while(checkForRemoval.hasNext()){
-            Track songChecked = checkForRemoval.next();
-            if(songChecked.getTitle().equalsIgnoreCase(title)){
-                songCollection.remove(songChecked);
-                removed = true;
+            Track song = checkForRemoval.next();
+            if(song.getTitle().equalsIgnoreCase(title)){
+                checkForRemoval.remove();
+                removed=true;
             }
         }
-        return removed;
-     
+    return removed;
     }
+    
 
     public void showList(){
         if(songCollection.isEmpty()){

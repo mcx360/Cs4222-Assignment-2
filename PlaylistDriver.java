@@ -1,6 +1,6 @@
 //Michal Kornacki
 //ID:22361979
-public class myPlaylistDriver {
+public class PlaylistDriver {
     public static void main(String[] args){
 
         //create the playlists(the nothing playlist remains empty to test the showList method)
@@ -54,7 +54,7 @@ public class myPlaylistDriver {
         System.out.println();
 
         //only plays year 2019
-        System.out.println("only year 2018:");
+        System.out.println("only year 2019:");
         favourites.playOnly(2019);
         System.out.println();
 
